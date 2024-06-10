@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: study-board-pod
+
+spec:
+  containers:
+    - name: board
+      image: k8s-study/board:1.1
