@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardResponseDto {
+    private String applicationName;
     private String title;
     private String content;
 }
