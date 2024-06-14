@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: study-board-deploy
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: study-board-deploy
+
+  template:
+    metadata:
+      labels:
+        app: study-board-deploy
+
+    spec:
+      containers:
+        - name: board
+          image: k8s-study/board:1.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: spring.application.name
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
