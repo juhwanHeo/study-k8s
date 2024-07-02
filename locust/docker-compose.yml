@@ -1,0 +1,14 @@
+services:
+  master:
+    image: locustio/locust
+    ports:
+     - "8999:8089"
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/stress.py --master -H http://master:8089
+  
+  worker:
+    image: locustio/locust
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/stress.py --worker --master-host master
