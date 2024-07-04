@@ -1,11 +1,14 @@
-FROM openjdk:17-jdk
+FROM amazoncorretto:17-alpine AS builder
+
+WORKDIR /app
+COPY ./ ./
 
 ## build
-CMD ["./gradlew", "clean", "build"]
+RUN chmod +x ./gradlew
+RUN ./gradlew clean build
 
-## copy
-ARG JAR_FILE_PATH=build/libs/*.jar
-COPY ${JAR_FILE_PATH} app.jar
+FROM amazoncorretto:17-alpine
+COPY --from=builder /app/build/libs/*.jar app.jar
 
 ## application entrypoint
 ENTRYPOINT ["java", "-jar", "app.jar"]
