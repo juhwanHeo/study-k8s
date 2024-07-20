@@ -11,5 +11,5 @@ services:
   board:
     image: k8s-study/board:1.0
     container_name: board
-    ports:
-      - 8080:8080
+    expose:
+      - 8080
