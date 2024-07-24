@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - board
+
+  board:
+    image: k8s-study/board:1.0
+    container_name: board
