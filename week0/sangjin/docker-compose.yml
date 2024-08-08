@@ -5,7 +5,7 @@ services:
     ports:
       - "8081:80"
     volumes:
-      - /c/sjKimProject/studyKubernatis/week0/sangjin/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - board
   board:
