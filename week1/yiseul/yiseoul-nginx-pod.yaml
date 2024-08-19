@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: yiseoul-nginx-pod
-  namespace: yiseoul
+  namespace: yiseoul-namespace
   labels:
     app: nginx
 spec:
