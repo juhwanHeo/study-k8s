@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ../lshan/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - board
+  board:
+    image: k8s-study/board:1.0
+    container_name: board
+    expose:
+      - 8080
