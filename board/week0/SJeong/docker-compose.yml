@@ -4,10 +4,10 @@ services:
   board:
     image: k8s-study/board:1.0
     container_name: board
-    ports:
-      - "8080"
-    # expose: # nginx 로만 접근하도록 설정 <-> ports
+    #ports:
     #  - "8080"
+    expose: # nginx 로만 접근하도록 설정 <-> ports
+    - "8080"
   nginx:
     image: nginx:latest
     container_name: nginx
