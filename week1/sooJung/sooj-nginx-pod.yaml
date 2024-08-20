@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sooj-nginx-pod
+  namespace: sooj-namespace
+spec:
+  containers:
+    - name: sooj-nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+          protocol: TCP
