@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sangjin-multi-pod
+spec:
+  containers:
+    - image: nginx:1.14
+      name: nginx
+      ports:
+        - containerPort: 8081
+      volumeMounts:
+        - name: nginx-config
+          mountPath: ./nginx.conf:/etc/nginx/nginx.conf
+          subPath: nginx.conf
+    - name: sangjin-container
+      image: gjwnghks99/board:1.0.0
+      ports:
+        - containerPort: 8080
+      command:
+        - sleep
+        - "10000"
+  volumes:
+    - name: nginx-config
+      configMap:
+        name: nginx-config-map
