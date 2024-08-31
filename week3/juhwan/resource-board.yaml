@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-resource-board
+  labels:
+    app: resource-board
+spec:
+  containers:
+  - name: resource-board
+    image: gjwnghks99/board:1.0.0
+    ports:
+    - containerPort: 8080
+    resources:
+      requests:
+        memory: "1Gi"    # 요청 메모리: 64MiB
+        cpu: "500m"       # 요청 CPU: 250 millicores
+      limits:
+        memory: "2Gi"   # 최대 메모리: 128MiB
+        cpu: "1000m"       # 최대 CPU: 500 millicores
