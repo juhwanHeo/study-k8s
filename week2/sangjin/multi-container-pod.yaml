@@ -16,9 +16,6 @@ spec:
       image: gjwnghks99/board:1.0.0
       ports:
         - containerPort: 8080
-      command:
-        - sleep
-        - "10000"
   volumes:
     - name: nginx-config
       configMap:
