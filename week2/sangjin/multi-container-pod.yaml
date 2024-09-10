@@ -20,3 +20,19 @@ spec:
     - name: nginx-config
       configMap:
         name: nginx-config-map
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |
+    events {}
+    http {
+      server {
+        listen 8081;
+        location / {
+          proxy_pass http://localhost:8080;
+        }
+      }
+    }
