@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-board
+spec:
+  containers:
+    - name: static-board
+      image: gjwnghks99/board:1.0.1
+      ports:
+        - containerPort: 8080
