@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: board-resource-pod
+  namespace: juwonlee
+  labels:
+    app: board-resource
+spec:
+  containers:
+  - image: gjwnghks99/board:1.0.0
+    name: board-container
+    ports:
+    - containerPort: 8080
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: 1000m
+        memory: 2Gi
