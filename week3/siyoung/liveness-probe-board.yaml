@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: board
-      image: gjwnghks99/board:1.0.1
+      image: gjwnghks99/board:1.0.0
       livenessProbe:
         httpGet:
           path: /hello

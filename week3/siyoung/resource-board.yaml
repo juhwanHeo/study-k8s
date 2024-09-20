@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: resource-board
-      image: gjwnghks99/board:1.0.1
+      image: gjwnghks99/board:1.0.0
       ports:
       - containerPort: 8080
       resources:
