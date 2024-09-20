@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sangjin-liveness-pod
+spec:
+  containers:
+   - image: gjwnghks99/board:1.0.0
+     name: sangjin-container
+     ports:
+     - containerPort: 8080
+     livenessProbe:
+       httpGet:
+         path: /hello
+         port: 8080
