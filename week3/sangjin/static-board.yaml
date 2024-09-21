@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sangjin-static-board
+spec:
+  containers:
+   - image: gjwnghks99/board:1.0.0
+     name: sangjin-static-board
+     ports:
+     - containerPort: 8080
