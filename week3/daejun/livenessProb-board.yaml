@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-board-pod
+spec:
+  containers:
+    - name: board
+      image: gjwnghks99/board:1.0.0
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /hello
+          port: 8080
