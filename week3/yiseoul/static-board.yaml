@@ -4,7 +4,7 @@ metadata:
   name: pod-static-board
 spec:
   containers:
-    - name: board-container
-      image: gjwnghks99/board:1.0.0
-      ports:
-        - containerPort: 8080
+  - name: board-container
+    image: gjwnghks99/board:1.0.0
+    ports:
+      - containerPort: 8080
