@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-board
+spec:
+  containers:
+    - name: resource-board
+      image: gjwnghks99/board:1.0.0
+      ports:
+      - containerPort: 8080
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1Gi
+        limits:
+          cpu: 1
+          memory: 2Gi
