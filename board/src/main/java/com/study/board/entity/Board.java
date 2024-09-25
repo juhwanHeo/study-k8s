@@ -26,6 +26,7 @@ public class Board {
 
     public BoardResponseDto toSearchResponseDto() {
         return BoardResponseDto.builder()
+                .id(this.id)
                 .title(this.title)
                 .content(this.content)
                 .creator(this.creator)
