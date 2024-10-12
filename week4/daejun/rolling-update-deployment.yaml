@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ru-board
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ru-board
+  template:
+    metadata:
+      labels:
+        app: ru-board
+    spec:
+      containers:
+        - name: board-contaioner
+          image: gjwnghks99/board:1.0.0
+          ports:
+            - containerPort: 8080
