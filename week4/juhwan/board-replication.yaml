@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: board-replication
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board-replicaset
+  template:
+    metadata:
+      name: board-replicaset
+      labels:
+        app: board-replicaset
+    spec:
+      containers:
+      - name: board-replication
+        image: gjwnghks99/board:1.0.0
+        ports:
+        - containerPort: 8080
