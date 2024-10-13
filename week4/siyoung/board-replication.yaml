@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: board-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      name: board
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: board
+          image: gjwnghks99/board:1.0.0
