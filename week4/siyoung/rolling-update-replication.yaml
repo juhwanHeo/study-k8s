@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-deploy
+  annotations:
+    kubernetes.io/change-cause: version 1.0.1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      name: board
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: board
+          image: gjwnghks99/board:1.0.1
