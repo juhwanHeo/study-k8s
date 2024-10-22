@@ -1,0 +1,6 @@
+services:
+  hello:
+    image: k8s-study/hello:1.0
+    container_name: hello
+    ports:
+      - 80:8080
