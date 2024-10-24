@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-rud
+  namespace: juwonlee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board-rud
+  template:
+    metadata:
+      name: board-rud
+      labels:
+        app: board-rud
+    spec:
+      containers:
+      - image: gjwnghks99/board:1.0.0
+        name: board-container
+        ports:
+        - containerPort: 80

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: board-replication
+  namespace: juwonlee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board-replicaset
+  template:
+    metadata:
+      name: board-replicaset
+      labels:
+        app: board-replicaset
+    spec:
+      containers:
+      - image: gjwnghks99/board:1.0.0
+        name: board-container
+        ports:
+        - containerPort: 80

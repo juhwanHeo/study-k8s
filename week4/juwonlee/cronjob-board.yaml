@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: board-cronjob
+  namespace: juwonlee
+spec:
+  schedule: "*/3 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - image: gjwnghks99/board:1.0.0
+            name: board-container
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
