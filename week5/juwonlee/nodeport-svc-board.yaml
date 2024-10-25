@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service
+  namespace: juwonlee
+spec:
+  type: NodePort
+  clusterIP: 10.100.100.200
+  selector:
+    app: board
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+    nodePort: 38080
