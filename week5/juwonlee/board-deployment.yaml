@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-deployment
+  namespace: juwonlee
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      name: board
+      labels:
+        app: board
+    spec:
+      containers:
+      - image: gjwnghks99/board:1.0.0
+        name: board-container
+        ports:
+        - containerPort: 80
