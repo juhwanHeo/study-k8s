@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: board-svc-cluster
 spec:
+  clusterIP: 10.96.0.123
   selector:
     app: board
   ports:
