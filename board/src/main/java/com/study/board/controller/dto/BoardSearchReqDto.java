@@ -1,8 +1,8 @@
 package com.study.board.controller.dto;
 
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class BoardSearchReqDto {
     private String title;
 }

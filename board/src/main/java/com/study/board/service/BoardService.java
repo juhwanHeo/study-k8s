@@ -26,7 +26,7 @@ public class BoardService {
     }
 
     public List<Board> search(BoardSearchReqDto searchReqDto) {
-        if (StringUtils.hasText(searchReqDto.getTitle())) return boardRepository.findAllByTitle(searchReqDto.getTitle());
+        if (StringUtils.hasText(searchReqDto.getTitle())) return boardRepository.findAllByTitleContains(searchReqDto.getTitle());
         return boardRepository.findAll();
     }
 }
