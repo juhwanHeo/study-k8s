@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-selector-board
+  labels:
+    app: node-selector-board
+spec:
+  replicas: 3  # Replication factor 설정
+  selector:
+    matchLabels:
+      app: node-selector-board
+  template:
+    metadata:
+      labels:
+        app: node-selector-board
+    spec:
+      nodeSelector:
+        rel: dev
+      containers:
+      - name: board-container
+        image: gjwnghks99/board:1.0.3
+        ports:
+        - containerPort: 8080  
