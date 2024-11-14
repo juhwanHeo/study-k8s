@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-labels
+spec:
+  nodeSelector:
+    rel: dev
+  containers:
+    - name: node-labels
+      image: gjwnghks99/board:1.0.3
+      ports:
+        - containerPort: 8080
