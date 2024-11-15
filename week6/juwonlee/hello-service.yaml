@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-service
+  namespace: ingress-nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: hello-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
