@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: board-container
+          image: gjwnghks99/board:1.0.3
+          ports:
+            - containerPort: 8080
