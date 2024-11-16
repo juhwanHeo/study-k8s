@@ -3,8 +3,9 @@ kind: Ingress
 metadata:
   name: board-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  ingressClassName: nginx
   rules:
     - host: yiseoul.ingress.com
       http:
