@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: board
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: hello
+      app: board
   template:
     metadata:
-      name: hello
+      name: board
       labels:
-        app: hello
+        app: board
     spec:
       containers:
-        - image: gjwnghks99/board:1.0.0
-          name: hello
+        - image: gjwnghks99/board:1.0.3
+          name: board
           ports:
             - containerPort: 8080
 
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-service
+  name: board-service
 spec:
   selector:
-    app: hello
+    app: board
   ports:
     - port: 80
       protocol: TCP
