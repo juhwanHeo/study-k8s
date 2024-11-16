@@ -24,4 +24,3 @@ spec:
                 name: board-service
                 port:
                   number: 80
- 
