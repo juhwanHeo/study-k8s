@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: hello
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: hello-container
-          image: gjwnghks99/board:1.0.0
+          image: gjwnghks99/hello:1.0.0
           ports:
             - containerPort: 8080
