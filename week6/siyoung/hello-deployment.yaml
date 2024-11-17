@@ -14,7 +14,7 @@ spec:
         app: hello
     spec:
       containers:
-        - image: gjwnghks99/board:1.0.0
+        - image: gjwnghks99/hello:1.0.0
           name: hello
           ports:
             - containerPort: 8080
