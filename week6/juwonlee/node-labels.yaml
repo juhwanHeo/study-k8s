@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-selector
+  namespace: ingress-nginx
+  labels:
+    app: node-selector
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-selector
+  template:
+    metadata:
+      labels:
+        app: node-selector
+    spec:
+      nodeSelector:
+        rel: dev
+      containers:
+      - name: board-container
+        image: gjwnghks99/board:1.0.3
+        ports:
+        - containerPort: 8080 

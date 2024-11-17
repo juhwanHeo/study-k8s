@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: board-ingress
+  namespace: ingress-nginx
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: juwon.ingress.com
+      http:
+        paths:
+          - path: /board
+            pathType: Prefix
+            backend:
+              service:
+                name: board-service
+                port:
+                  number: 80
+          - path: /hello
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-service
+                port:
+                  number: 80
