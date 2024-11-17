@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: externalname-svc
+  namespace: juwonlee
+spec:
+  type: ExternalName
+  externalName: seedssoft.co.kr
