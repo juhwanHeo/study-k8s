@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BoardResponseDto {
     private String applicationName;
+    private long id;
     private String title;
     private String content;
     private String creator;
