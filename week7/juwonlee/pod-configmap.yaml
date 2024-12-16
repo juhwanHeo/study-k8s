@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: board-configmap
+data:
+  spring.application.name: juwonlee-application-configmap
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.4
+      envFrom:
+        - configMapRef:
+            name: board-configmap

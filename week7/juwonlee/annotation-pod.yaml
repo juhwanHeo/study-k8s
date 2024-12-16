@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: board-annotation
+  annotations:
+    imageRepository: "https://hub.docker.com/r/gjwnghks99/board/tags"
+    githubName: "juwonlee.dev"
+    githubEmail: "juwonlee.dev@gamil.com"
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.4
