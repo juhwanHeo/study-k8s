@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mainui-stable
+  labels:
+    app: mainui
+    version: stable
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mainui
+      version: stable
+  template:
+    metadata:
+      labels:
+        app: mainui
+        version: stable
+    spec:
+      containers:
+        - name: mainui
+          image: nginx:1.14
+          ports:
+            - containerPort: 80
