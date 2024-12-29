@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: daejun-k8s-study-configmap
+  namespace: default
+data:
+  spring.application.name: "daejun-k8s-study-configmap"

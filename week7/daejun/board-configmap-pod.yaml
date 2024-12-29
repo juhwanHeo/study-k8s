@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: board-configmap-pod
+  namespace: default
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.3
+      env:
+        - name: SPRING_APPLICATION_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: daejun-k8s-study-configmap
+              key: spring.application.name
+      ports:
+        - containerPort: 8080
