@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotation-pod
+  annotations:
+    imageRepository: "https://hub.docker.com/r/gjwnghks99/hello/tags"
+    githubName: "LSHgy"
+    githubEmail: "his5423@gmail.com"
+spec:
+  containers:
+    - name: hello-container
+      image: gjwnghks99/hello:1.0.0
