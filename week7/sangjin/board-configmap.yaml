@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: board-configmap
+data:
+  spring.application.name: sangjin
