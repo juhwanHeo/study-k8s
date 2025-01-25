@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume 
+metadata:
+  name: juhwan-pv-01
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: "juhwan-sc"
+  persistentVolumeReclaimPolicy: Retain 
+  hostPath:
+    path: /home/master/kubernetes/pv/pv-1
