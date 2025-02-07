@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hello-replica
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      name: hello-pod
+      labels:
+        app: hello
+    spec:
+      containers:
+        - name: hello-container
+          image: gjwnghks99/hello:1.0.0
+      affinity:
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: nginx
+              topologyKey: kubernetes.io/hostname
