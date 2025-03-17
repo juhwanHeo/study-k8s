@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: board-pod 
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.4
+      volumeMounts:
+      - mountPath: "/home/board/data"
+        name: board-volume
+  volumes:
+    - name: board-volume
+      persistentVolumeClaim:
+        claimName: juhwan-pvc
