@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello
+  annotations:
+    imageRepository: "https://hub.docker.com/r/gjwnghks99/hello/tags"
+    githubName: "sangjin0521"
+    githubEmail: "sangjin0521@naver.com"
+spec:
+  containers:
+    - image: gjwnghks99/hello:1.0.0
+      name: hello

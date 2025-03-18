@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: board
+spec:
+  containers:
+    - image: gjwnghks99/board:1.0.3
+      name: board-container
+      envFrom:
+        - configMapRef:
+            name: board-configmap
