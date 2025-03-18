@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: board-configmap
 data:
-  spring.application.name: sangjin
+  spring.application.name: sangjin-k8s-study-configMap
