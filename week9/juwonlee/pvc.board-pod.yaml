@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-board-pod
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.4
+  volumes:
+    - name: board-volume
+      persistentVolumeClaim:
+        claimName: juwonlee-pvc
