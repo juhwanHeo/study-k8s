@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: board-replica
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      name: board-pod
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: board-container
+          image: gjwnghks99/board:1.0.3
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: nginx
+              topologyKey: kubernetes.io/hostname
