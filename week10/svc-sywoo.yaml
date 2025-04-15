@@ -1,0 +1,37 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"labels":{"k8s-app":"sywoo"},"name":"sywoo","namespace":"sywoo"},"spec":{"ports":[{"port":443,"targetPort":8443}],"selector":{"k8s-app":"sywoo"}}}
+  creationTimestamp: "2025-04-15T13:13:55Z"
+  labels:
+    k8s-app: sywoo
+  name: sywoo
+  namespace: sywoo
+  resourceVersion: "25508594"
+  uid: 9efc61b3-5e3d-49f9-8fca-5b5b53189387
+spec:
+  clusterIP: 10.107.238.110
+  clusterIPs:
+    - 10.107.238.110
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - nodePort: 31990
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+  selector:
+    k8s-app: sywoo
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
