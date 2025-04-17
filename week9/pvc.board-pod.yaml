@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-board
+spec:
+  containers:
+    - name: board-container
+      image: gjwnghks99/board:1.0.4
+  volumes:
+    - name: siyoung-pvc
+      persistentVolumeClaim:
+        claimName: siyoung-pvc-01
