@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard-sangjin
+  name: kubernetes-dashboard-sangjin
+  namespace: kubernetes-dashboard-sangjin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: kubernetes-dashboard-sangjin
+  template:
+    metadata:
+      labels:
+        k8s-app: kubernetes-dashboard-sangjin
+    spec:
+      serviceAccountName: kubernetes-dashboard-sangjin
+      containers:
+      - name: kubernetes-dashboard-sangjin
+        image: kubernetesui/dashboard:v2.7.0
+        ports:
+        - containerPort: 8443
+          protocol: TCP
+        args:
+          - --auto-generate-certificates
+          - --namespace=kubernetes-dashboard-sangjin
+        volumeMounts:
+        - mountPath: /certs
+          name: kubernetes-dashboard-certs
+        - mountPath: /tmp
+          name: tmp-volume
+      volumes:
+      - name: kubernetes-dashboard-certs
+        secret:
+          secretName: kubernetes-dashboard-certs
+      - name: tmp-volume
+        emptyDir: {}
